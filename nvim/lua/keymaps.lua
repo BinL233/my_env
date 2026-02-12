@@ -42,3 +42,7 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find f
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+-- barbar
+vim.keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
+vim.keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
