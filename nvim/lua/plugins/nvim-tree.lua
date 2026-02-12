@@ -17,6 +17,15 @@ return {
           renderer = {
             group_empty = true,
           },
+          filters = {
+            dotfiles = false,
+            git_ignored = false, 
+            custom = { ".DS_Store" }
+          },
+          git = {
+            enable = true,
+            ignore = false,
+          },
         }
       end,
     },

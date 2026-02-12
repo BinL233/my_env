@@ -2,7 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    branch = "master",
+    -- branch = "master",
     -- "LazyFile" is not a real event. Use these instead:
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {

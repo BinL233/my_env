@@ -2,7 +2,8 @@
 require('nvim-treesitter').install({
   "c", "cpp", "cmake", "comment", "go", "java", "javascript",
   "jsx", "lua", "ledger", "markdown", "markdown_inline",
-  "python", "rust", "typescript", "tsx", "vim", "vue", "zsh"
+  "python", "rust", "typescript", "tsx", "vim", "vue", "zsh",
+  "proto",
 })
 
 require('nvim-treesitter-textobjects').setup{
@@ -18,7 +19,8 @@ require('nvim-treesitter-textobjects').setup{
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {
     "cpp", "cmake", "go", "java", "javascript", "javascriptreact", "ledger",
-    "lua", "markdown", "python", "rust", "typescript", "typescriptreact", "vue"
+    "lua", "markdown", "python", "rust", "typescript", "typescriptreact", "vue",
+    "protp"
   },
   callback = function()
     vim.treesitter.start()
