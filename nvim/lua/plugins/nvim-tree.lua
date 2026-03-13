@@ -16,6 +16,12 @@ return {
           },
           renderer = {
             group_empty = true,
+            highlight_git = true,
+            icons = {
+              show = {
+                git = true,
+              },
+            },
           },
           filters = {
             dotfiles = false,
@@ -25,6 +31,7 @@ return {
           git = {
             enable = true,
             ignore = false,
+            timeout = 200,
           },
         }
       end,
