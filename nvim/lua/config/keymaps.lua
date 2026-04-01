@@ -26,7 +26,16 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>", { silent = true })
 
 -- Diffview
-vim.keymap.set("n", "<leader>d", ":DiffviewOpen<CR>")
+vim.keymap.set("n", "<leader>d", function()
+  local lib = require("diffview.lib")
+  local view = lib.get_current_view()
+  
+  if view then
+    vim.cmd("DiffviewClose")
+  else
+    vim.cmd("DiffviewOpen")
+  end
+end, { desc = "Toggle Diffview" })
 
 -----------------
 -- Visual mode --

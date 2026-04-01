@@ -3,7 +3,7 @@ return {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp", -- cmp_nvim_lsp
         "neovim/nvim-lspconfig", -- lspconfig
-        "onsails/lspkind-nvim", -- lspkind (VS pictograms)
+        "onsails/lspkind.nvim", -- lspkind (VS pictograms)
         {
             "L3MON4D3/LuaSnip",
             version = "v2.*",
