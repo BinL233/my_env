@@ -56,3 +56,13 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 vim.keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
 vim.keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
 vim.keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+
+-- Go to Definition
+-- Jump to definition
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to Definition' })
+
+-- Open definition in a vertical split (handy!)
+vim.keymap.set('n', 'gv', function()
+  vim.cmd('vsplit')
+  vim.lsp.buf.definition()
+end, { desc = 'Go to Definition in Split' })
