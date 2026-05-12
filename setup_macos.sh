@@ -15,3 +15,6 @@ brew install zsh-autocomplete
 
 # p10k
 brew install powerlevel10k
+
+# Scroll Reverser
+wget https://pilotmoon.com/downloads/ScrollReverser-1.9.zip
