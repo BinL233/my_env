@@ -14,11 +14,15 @@ return {
                             -- J/K for navigation in Insert mode (while typing)
                             ["<C-j>"] = "move_selection_next",
                             ["<C-k>"] = "move_selection_previous",
+                            ["<C-n>"] = "cycle_history_next",
+                            ["<C-p>"] = "cycle_history_prev",
                         },
                         n = {
                             -- J/K for navigation in Normal mode
                             ["<C-j>"] = "move_selection_next",
                             ["<C-k>"] = "move_selection_previous",
+                            ["<C-n>"] = "cycle_history_next",
+                            ["<C-p>"] = "cycle_history_prev",
                         },
                     },
                 },
