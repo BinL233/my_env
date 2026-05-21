@@ -1,0 +1,372 @@
+
+==============================================================================
+vim.lsp:                                                                  5 ⚠️
+
+- LSP log level : WARN
+- Log path: /Users/bytedance/.local/state/nvim/lsp.log
+- Log size: 17 KB
+
+vim.lsp: Active Features ~
+
+vim.lsp: Active Clients ~
+- No active clients
+
+vim.lsp: Enabled Configurations ~
+- clangd:
+  - capabilities: {
+      offsetEncoding = { "utf-8", "utf-16" },
+      textDocument = {
+        completion = {
+          completionItem = {
+            commitCharactersSupport = false,
+            deprecatedSupport = true,
+            documentationFormat = { "markdown", "plaintext" },
+            insertReplaceSupport = true,
+            insertTextModeSupport = {
+              valueSet = { 1 }
+            },
+            labelDetailsSupport = true,
+            preselectSupport = false,
+            resolveSupport = {
+              properties = { "documentation", "detail", "additionalTextEdits", "command", "data" }
+            },
+            snippetSupport = true,
+            tagSupport = {
+              valueSet = { 1 }
+            }
+          },
+          completionList = {
+            itemDefaults = { "commitCharacters", "editRange", "insertTextFormat", "insertTextMode", "data" }
+          },
+          contextSupport = true,
+          editsNearCursor = true,
+          insertTextMode = 1
+        }
+      }
+    }
+  - cmd: { "clangd" }
+  - filetypes: c, cpp, objc, objcpp, cuda
+  - get_language_id: <function @/Users/bytedance/.local/share/nvim/lazy/nvim-lspconfig/lsp/clangd.lua:77>
+  - on_attach: <function @/Users/bytedance/.local/share/nvim/lazy/nvim-lspconfig/lsp/clangd.lua:95>
+  - on_init: <function @/Users/bytedance/.local/share/nvim/lazy/nvim-lspconfig/lsp/clangd.lua:90>
+  - root_markers: { ".clangd", ".clang-tidy", ".clang-format", "compile_commands.json", "compile_flags.txt", "configure.ac", ".git" }
+
+- ⚠️ WARNING 'docker-compose-langserver' is not executable. Configuration will not be used.
+- ⚠️ WARNING Unknown filetype 'yaml.docker-compose' (Hint: filename extension != filetype).
+- docker_compose_language_service:
+  - capabilities: {
+      textDocument = {
+        completion = {
+          completionItem = {
+            commitCharactersSupport = false,
+            deprecatedSupport = true,
+            documentationFormat = { "markdown", "plaintext" },
+            insertReplaceSupport = true,
+            insertTextModeSupport = {
+              valueSet = { 1 }
+            },
+            labelDetailsSupport = true,
+            preselectSupport = false,
+            resolveSupport = {
+              properties = { "documentation", "detail", "additionalTextEdits", "command", "data" }
+            },
+            snippetSupport = true,
+            tagSupport = {
+              valueSet = { 1 }
+            }
+          },
+          completionList = {
+            itemDefaults = { "commitCharacters", "editRange", "insertTextFormat", "insertTextMode", "data" }
+          },
+          contextSupport = true,
+          insertTextMode = 1
+        }
+      }
+    }
+  - cmd: { "docker-compose-langserver", "--stdio" }
+  - filetypes: yaml.docker-compose
+  - root_markers: { "docker-compose.yaml", "docker-compose.yml", "compose.yaml", "compose.yml" }
+
+- ⚠️ WARNING Unknown filetype 'gotmpl' (Hint: filename extension != filetype).
+- gopls:
+  - capabilities: {
+      textDocument = {
+        completion = {
+          completionItem = {
+            commitCharactersSupport = true,
+            deprecatedSupport = true,
+            documentationFormat = { "markdown", "plaintext" },
+            insertReplaceSupport = true,
+            insertTextModeSupport = {
+              valueSet = { 1, 2 }
+            },
+            labelDetailsSupport = true,
+            preselectSupport = true,
+            resolveSupport = {
+              properties = { "documentation", "additionalTextEdits", "insertTextFormat", "insertTextMode", "command" }
+            },
+            snippetSupport = true,
+            tagSupport = {
+              valueSet = { 1 }
+            }
+          },
+          completionList = {
+            itemDefaults = { "commitCharacters", "editRange", "insertTextFormat", "insertTextMode", "data" }
+          },
+          contextSupport = true,
+          dynamicRegistration = false,
+          insertTextMode = 1
+        }
+      }
+    }
+  - cmd: { "gopls" }
+  - filetypes: go, gomod, gowork, gotmpl
+  - root_dir: <function @/Users/bytedance/.config/nvim/lua/config/lsp.lua:9>
+
+- html:
+  - capabilities: {
+      textDocument = {
+        completion = {
+          completionItem = {
+            commitCharactersSupport = false,
+            deprecatedSupport = true,
+            documentationFormat = { "markdown", "plaintext" },
+            insertReplaceSupport = true,
+            insertTextModeSupport = {
+              valueSet = { 1 }
+            },
+            labelDetailsSupport = true,
+            preselectSupport = false,
+            resolveSupport = {
+              properties = { "documentation", "detail", "additionalTextEdits", "command", "data" }
+            },
+            snippetSupport = true,
+            tagSupport = {
+              valueSet = { 1 }
+            }
+          },
+          completionList = {
+            itemDefaults = { "commitCharacters", "editRange", "insertTextFormat", "insertTextMode", "data" }
+          },
+          contextSupport = true,
+          insertTextMode = 1
+        }
+      }
+    }
+  - cmd: <function @/Users/bytedance/.local/share/nvim/lazy/nvim-lspconfig/lsp/html.lua:27>
+  - filetypes: html
+  - init_options: {
+      configurationSection = { "html", "css", "javascript" },
+      embeddedLanguages = {
+        css = true,
+        javascript = true
+      },
+      provideFormatter = true
+    }
+  - root_markers: { "package.json", ".git" }
+  - settings: {}
+
+- jsonls:
+  - capabilities: {
+      textDocument = {
+        completion = {
+          completionItem = {
+            commitCharactersSupport = false,
+            deprecatedSupport = true,
+            documentationFormat = { "markdown", "plaintext" },
+            insertReplaceSupport = true,
+            insertTextModeSupport = {
+              valueSet = { 1 }
+            },
+            labelDetailsSupport = true,
+            preselectSupport = false,
+            resolveSupport = {
+              properties = { "documentation", "detail", "additionalTextEdits", "command", "data" }
+            },
+            snippetSupport = true,
+            tagSupport = {
+              valueSet = { 1 }
+            }
+          },
+          completionList = {
+            itemDefaults = { "commitCharacters", "editRange", "insertTextFormat", "insertTextMode", "data" }
+          },
+          contextSupport = true,
+          insertTextMode = 1
+        }
+      }
+    }
+  - cmd: <function @/Users/bytedance/.local/share/nvim/lazy/nvim-lspconfig/lsp/jsonls.lua:26>
+  - filetypes: json, jsonc
+  - init_options: {
+      provideFormatter = true
+    }
+  - root_markers: { ".git" }
+
+- ⚠️ WARNING 'phpactor' is not executable. Configuration will not be used.
+- phpactor:
+  - capabilities: {
+      textDocument = {
+        completion = {
+          completionItem = {
+            commitCharactersSupport = true,
+            deprecatedSupport = true,
+            documentationFormat = { "markdown", "plaintext" },
+            insertReplaceSupport = true,
+            insertTextModeSupport = {
+              valueSet = { 1, 2 }
+            },
+            labelDetailsSupport = true,
+            preselectSupport = true,
+            resolveSupport = {
+              properties = { "documentation", "additionalTextEdits", "insertTextFormat", "insertTextMode", "command" }
+            },
+            snippetSupport = true,
+            tagSupport = {
+              valueSet = { 1 }
+            }
+          },
+          completionList = {
+            itemDefaults = { "commitCharacters", "editRange", "insertTextFormat", "insertTextMode", "data" }
+          },
+          contextSupport = true,
+          dynamicRegistration = false,
+          insertTextMode = 1
+        }
+      }
+    }
+  - cmd: { "phpactor", "language-server" }
+  - filetypes: php
+  - root_markers: { ".git", "composer.json", ".phpactor.json", ".phpactor.yml" }
+  - workspace_required: true
+
+- pyre:
+  - capabilities: {
+      textDocument = {
+        completion = {
+          completionItem = {
+            commitCharactersSupport = false,
+            deprecatedSupport = true,
+            documentationFormat = { "markdown", "plaintext" },
+            insertReplaceSupport = true,
+            insertTextModeSupport = {
+              valueSet = { 1 }
+            },
+            labelDetailsSupport = true,
+            preselectSupport = false,
+            resolveSupport = {
+              properties = { "documentation", "detail", "additionalTextEdits", "command", "data" }
+            },
+            snippetSupport = true,
+            tagSupport = {
+              valueSet = { 1 }
+            }
+          },
+          completionList = {
+            itemDefaults = { "commitCharacters", "editRange", "insertTextFormat", "insertTextMode", "data" }
+          },
+          contextSupport = true,
+          insertTextMode = 1
+        }
+      }
+    }
+  - cmd: { "pyre", "persistent" }
+  - filetypes: python
+  - root_markers: { ".pyre_configuration" }
+
+- pyright:
+  - capabilities: {
+      textDocument = {
+        completion = {
+          completionItem = {
+            commitCharactersSupport = true,
+            deprecatedSupport = true,
+            documentationFormat = { "markdown", "plaintext" },
+            insertReplaceSupport = true,
+            insertTextModeSupport = {
+              valueSet = { 1, 2 }
+            },
+            labelDetailsSupport = true,
+            preselectSupport = true,
+            resolveSupport = {
+              properties = { "documentation", "additionalTextEdits", "insertTextFormat", "insertTextMode", "command" }
+            },
+            snippetSupport = true,
+            tagSupport = {
+              valueSet = { 1 }
+            }
+          },
+          completionList = {
+            itemDefaults = { "commitCharacters", "editRange", "insertTextFormat", "insertTextMode", "data" }
+          },
+          contextSupport = true,
+          dynamicRegistration = false,
+          insertTextMode = 1
+        }
+      }
+    }
+  - cmd: { "pyright-langserver", "--stdio" }
+  - filetypes: python
+  - on_attach: <function @/Users/bytedance/.local/share/nvim/lazy/nvim-lspconfig/lsp/pyright.lua:47>
+  - root_markers: { "pyrightconfig.json", "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", ".git" }
+  - settings: {
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          diagnosticMode = "openFilesOnly",
+          useLibraryCodeForTypes = true
+        }
+      }
+    }
+
+- ⚠️ WARNING 'solargraph' is not executable. Configuration will not be used.
+- solargraph:
+  - capabilities: {
+      textDocument = {
+        completion = {
+          completionItem = {
+            commitCharactersSupport = true,
+            deprecatedSupport = true,
+            documentationFormat = { "markdown", "plaintext" },
+            insertReplaceSupport = true,
+            insertTextModeSupport = {
+              valueSet = { 1, 2 }
+            },
+            labelDetailsSupport = true,
+            preselectSupport = true,
+            resolveSupport = {
+              properties = { "documentation", "additionalTextEdits", "insertTextFormat", "insertTextMode", "command" }
+            },
+            snippetSupport = true,
+            tagSupport = {
+              valueSet = { 1 }
+            }
+          },
+          completionList = {
+            itemDefaults = { "commitCharacters", "editRange", "insertTextFormat", "insertTextMode", "data" }
+          },
+          contextSupport = true,
+          dynamicRegistration = false,
+          insertTextMode = 1
+        }
+      }
+    }
+  - cmd: { "solargraph", "stdio" }
+  - filetypes: ruby
+  - init_options: {
+      formatting = true
+    }
+  - root_markers: { "Gemfile", ".git" }
+  - settings: {
+      solargraph = {
+        diagnostics = true
+      }
+    }
+
+
+vim.lsp: File Watcher ~
+- file watching "(workspace/didChangeWatchedFiles)" disabled on all clients
+
+vim.lsp: Position Encodings ~
+- No active clients
+

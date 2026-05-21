@@ -60,6 +60,8 @@ vim.keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 -- Go to Definition
 -- Jump to definition
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to Definition' })
+-- Jump back from definition
+vim.keymap.set('n', 'gb', '<C-t>', { desc = 'Go Back from Definition' })
 
 -- Open definition in a vertical split (handy!)
 vim.keymap.set('n', 'gv', function()

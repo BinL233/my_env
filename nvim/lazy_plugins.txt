@@ -1,0 +1,1073 @@
+{ {
+    _ = {
+      dep = true,
+      frags = { 28 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        plugin = "nvim-cmp",
+        time = 366959
+      },
+      top = false
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/cmp-nvim-lsp",
+    lazy = true,
+    name = "cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp.git",
+    <metatable> = {
+      __index = { "hrsh7th/cmp-nvim-lsp" }
+    }
+  }, {
+    _ = {
+      frags = { 7, 13 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 2911166
+      },
+      top = false
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/gitsigns.nvim",
+    lazy = false,
+    name = "gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim.git",
+    <metatable> = {
+      __index = { "lewis6991/gitsigns.nvim",
+        config = <function 1>,
+        <metatable> = {
+          __index = { "lewis6991/gitsigns.nvim" }
+        }
+      }
+    }
+  }, {
+    _ = {
+      dep = true,
+      frags = { 33 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        plugin = "nvim-cmp",
+        time = 375250
+      },
+      top = false
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/cmp_luasnip",
+    lazy = true,
+    name = "cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip.git",
+    <metatable> = {
+      __index = <1>{ "saadparwaiz1/cmp_luasnip",
+        enabled = true
+      }
+    }
+  }, {
+    _ = {
+      dep = true,
+      frags = { 8, 19, 38, 47 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        plugin = "render-markdown.nvim",
+        time = 310625
+      },
+      top = false
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/nvim-web-devicons",
+    lazy = true,
+    name = "nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons.git",
+    <metatable> = {
+      __index = { "nvim-tree/nvim-web-devicons",
+        <metatable> = {
+          __index = { "nvim-tree/nvim-web-devicons",
+            <metatable> = {
+              __index = { "nvim-tree/nvim-web-devicons",
+                <metatable> = {
+                  __index = { "nvim-tree/nvim-web-devicons" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }, {
+    _ = {
+      frags = { 18 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 6239958
+      },
+      top = true
+    },
+    dependencies = { "nvim-web-devicons" },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/lualine.nvim",
+    lazy = false,
+    name = "lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim.git",
+    <metatable> = {
+      __index = { "nvim-lualine/lualine.nvim",
+        config = <function 2>,
+        dependencies = { "nvim-tree/nvim-web-devicons" }
+      }
+    }
+  }, {
+    _ = {
+      frags = { 25 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 21125
+      },
+      top = true
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/monokai.nvim",
+    lazy = false,
+    name = "monokai.nvim",
+    url = "https://github.com/tanvirtin/monokai.nvim.git",
+    <metatable> = {
+      __index = { "tanvirtin/monokai.nvim" }
+    }
+  }, {
+    _ = {
+      frags = { 27 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 11559000
+      },
+      top = true
+    },
+    dependencies = { "cmp-nvim-lsp", "nvim-lspconfig", "lspkind.nvim", "LuaSnip", "cmp_luasnip" },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/nvim-cmp",
+    lazy = false,
+    name = "nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp.git",
+    <metatable> = {
+      __index = { "hrsh7th/nvim-cmp",
+        config = <function 3>,
+        dependencies = { "hrsh7th/cmp-nvim-lsp", "neovim/nvim-lspconfig", "onsails/lspkind.nvim", <2>{ "L3MON4D3/LuaSnip",
+            build = "make install_jsregexp",
+            config = <function 4>,
+            dependencies = { "rafamadriz/friendly-snippets" },
+            version = "v2.*",
+            <metatable> = {
+              __index = { "L3MON4D3/LuaSnip",
+                version = "v2.*"
+              }
+            }
+          }, <table 1> }
+      }
+    }
+  }, {
+    _ = {
+      cache = {
+        opts = {}
+      },
+      frags = { 14 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 5259625
+      },
+      top = true
+    },
+    dependencies = { "nvim-treesitter", "nvim-lspconfig" },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/ipynb.nvim",
+    lazy = false,
+    name = "ipynb.nvim",
+    url = "https://github.com/ajbucci/ipynb.nvim.git",
+    <metatable> = {
+      __index = { "ajbucci/ipynb.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" },
+        opts = {}
+      }
+    }
+  }, {
+    _ = {
+      cache = {
+        event_list = { "VeryLazy" },
+        keys_list = { <3>{ "s", <function 5>,
+            desc = "Flash",
+            mode = { "n", "x", "o" }
+          }, <4>{ "S", <function 6>,
+            desc = "Flash Treesitter",
+            mode = { "n", "x", "o" }
+          }, <5>{ "r", <function 7>,
+            desc = "Remote Flash",
+            mode = "o"
+          }, <6>{ "R", <function 8>,
+            desc = "Treesitter Search",
+            mode = { "o", "x" }
+          }, <7>{ "<c-s>", <function 9>,
+            desc = "Toggle Flash Search",
+            mode = { "c" }
+          } }
+      },
+      frags = { 12 },
+      handlers = {
+        event = {
+          VeryLazy = <8>{
+            event = "User",
+            id = "VeryLazy",
+            pattern = "VeryLazy"
+          }
+        },
+        keys = {
+          ["\19 (c)"] = {
+            desc = "Toggle Flash Search",
+            id = "\19 (c)",
+            lhs = "<c-s>",
+            mode = "c",
+            rhs = <function 9>
+          },
+          ["R (o)"] = {
+            desc = "Treesitter Search",
+            id = "R (o)",
+            lhs = "R",
+            mode = "o",
+            rhs = <function 8>
+          },
+          ["R (x)"] = {
+            desc = "Treesitter Search",
+            id = "R (x)",
+            lhs = "R",
+            mode = "x",
+            rhs = <function 8>
+          },
+          S = {
+            desc = "Flash Treesitter",
+            id = "S",
+            lhs = "S",
+            mode = "n",
+            rhs = <function 6>
+          },
+          ["S (o)"] = {
+            desc = "Flash Treesitter",
+            id = "S (o)",
+            lhs = "S",
+            mode = "o",
+            rhs = <function 6>
+          },
+          ["S (x)"] = {
+            desc = "Flash Treesitter",
+            id = "S (x)",
+            lhs = "S",
+            mode = "x",
+            rhs = <function 6>
+          },
+          ["r (o)"] = {
+            desc = "Remote Flash",
+            id = "r (o)",
+            lhs = "r",
+            mode = "o",
+            rhs = <function 7>
+          },
+          s = {
+            desc = "Flash",
+            id = "s",
+            lhs = "s",
+            mode = "n",
+            rhs = <function 5>
+          },
+          ["s (o)"] = {
+            desc = "Flash",
+            id = "s (o)",
+            lhs = "s",
+            mode = "o",
+            rhs = <function 5>
+          },
+          ["s (x)"] = {
+            desc = "Flash",
+            id = "s (x)",
+            lhs = "s",
+            mode = "x",
+            rhs = <function 5>
+          }
+        }
+      },
+      installed = true,
+      top = true
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/flash.nvim",
+    lazy = true,
+    name = "flash.nvim",
+    url = "https://github.com/folke/flash.nvim.git",
+    <metatable> = {
+      __index = { "folke/flash.nvim",
+        event = "VeryLazy",
+        keys = { <table 3>, <table 4>, <table 5>, <table 6>, <table 7> },
+        opts = {
+          modes = {
+            search = {
+              enabled = true
+            }
+          }
+        }
+      }
+    }
+  }, {
+    _ = {
+      frags = { 20, 31 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 15649334
+      },
+      top = false
+    },
+    dependencies = { "friendly-snippets" },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/LuaSnip",
+    lazy = false,
+    name = "LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip.git",
+    <metatable> = {
+      __index = <table 2>
+    }
+  }, {
+    _ = {
+      dep = true,
+      frags = { 16, 24, 29 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        plugin = "mason-lspconfig.nvim",
+        time = 392666
+      },
+      top = false
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/nvim-lspconfig",
+    lazy = true,
+    name = "nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig.git",
+    <metatable> = {
+      __index = { "neovim/nvim-lspconfig",
+        <metatable> = {
+          __index = { "neovim/nvim-lspconfig",
+            <metatable> = {
+              __index = { "neovim/nvim-lspconfig" }
+            }
+          }
+        }
+      }
+    }
+  }, {
+    _ = {
+      cache = {
+        event_list = { "VeryLazy" }
+      },
+      frags = { 35 },
+      handlers = {
+        event = {
+          VeryLazy = <table 8>
+        }
+      },
+      installed = true,
+      top = true
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/nvim-surround",
+    lazy = true,
+    name = "nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround.git",
+    <metatable> = {
+      __index = { "kylechui/nvim-surround",
+        config = <function 10>,
+        event = "VeryLazy",
+        version = "^3.0.0"
+      }
+    }
+  }, {
+    _ = {
+      frags = { 4, 3, 48 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 5258584
+      },
+      pkg = {
+        dir = "/Users/bytedance/.local/share/nvim/lazy/telescope.nvim",
+        file = "telescope.nvim-scm-1.rockspec",
+        name = "telescope.nvim",
+        source = "rockspec",
+        spec = <9>{ "telescope.nvim",
+          optional = true,
+          specs = <10>{ "telescope.nvim",
+            build = false,
+            optional = true,
+            specs = { <11>{ "nvim-lua/plenary.nvim",
+                lazy = true,
+                <metatable> = {
+                  __index = <12>{ "plenary.nvim",
+                    optional = true,
+                    specs = <13>{ "nvim-lua/plenary.nvim",
+                      lazy = true,
+                      optional = true
+                    },
+                    <metatable> = {
+                      __index = <table 13>
+                    }
+                  }
+                }
+              } }
+          },
+          <metatable> = {
+            __index = <table 10>
+          }
+        }
+      },
+      top = false
+    },
+    dependencies = { "plenary.nvim", "telescope-fzf-native.nvim" },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/telescope.nvim",
+    lazy = false,
+    name = "telescope.nvim",
+    optional = false,
+    url = "https://github.com/nvim-telescope/telescope.nvim.git",
+    <metatable> = {
+      __index = { "nvim-telescope/telescope.nvim",
+        config = <function 11>,
+        dependencies = { "nvim-lua/plenary.nvim", <14>{ "nvim-telescope/telescope-fzf-native.nvim",
+            build = "make"
+          } },
+        version = "*",
+        <metatable> = {
+          __index = <table 9>
+        }
+      }
+    }
+  }, {
+    _ = {
+      cache = {
+        cmd_list = { "NvimTreeToggle" }
+      },
+      frags = { 37 },
+      handlers = {
+        cmd = {
+          NvimTreeToggle = "NvimTreeToggle"
+        }
+      },
+      installed = true,
+      top = true
+    },
+    dependencies = { "nvim-web-devicons" },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/nvim-tree.lua",
+    lazy = true,
+    name = "nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua.git",
+    <metatable> = {
+      __index = { "nvim-tree/nvim-tree.lua",
+        cmd = "NvimTreeToggle",
+        config = <function 12>,
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        version = "*"
+      }
+    }
+  }, {
+    _ = {
+      frags = { 52 },
+      installed = true,
+      loaded = {
+        source = "init.lua",
+        time = 10633209
+      },
+      top = true
+    },
+    config = <function 13>,
+    dir = "/Users/bytedance/.local/share/nvim/lazy/lazy.nvim",
+    lazy = true,
+    name = "lazy.nvim",
+    url = "https://github.com/folke/lazy.nvim.git",
+    <metatable> = {
+      __index = { "folke/lazy.nvim" }
+    }
+  }, {
+    _ = {
+      frags = { 2, 1, 5, 49 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        plugin = "telescope.nvim",
+        time = 642583
+      },
+      pkg = {
+        dir = "/Users/bytedance/.local/share/nvim/lazy/plenary.nvim",
+        file = "community",
+        name = "plenary.nvim",
+        source = "lazy",
+        spec = <table 12>
+      },
+      top = false
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/plenary.nvim",
+    name = "plenary.nvim",
+    optional = false,
+    url = "https://github.com/nvim-lua/plenary.nvim.git",
+    <metatable> = {
+      __index = { "nvim-lua/plenary.nvim",
+        <metatable> = {
+          __index = <table 11>
+        }
+      }
+    }
+  }, {
+    _ = {
+      dep = true,
+      frags = { 40 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        plugin = "nvim-treesitter",
+        time = 368875
+      },
+      top = false
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/nvim-treesitter-textobjects",
+    lazy = true,
+    name = "nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git",
+    <metatable> = {
+      __index = { "nvim-treesitter/nvim-treesitter-textobjects" }
+    }
+  }, {
+    _ = {
+      cache = {
+        opts = {}
+      },
+      frags = { 21, 23 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        plugin = "mason-lspconfig.nvim",
+        time = 3899542
+      },
+      top = false
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/mason.nvim",
+    lazy = false,
+    name = "mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim.git",
+    <metatable> = {
+      __index = { "williamboman/mason.nvim",
+        <metatable> = {
+          __index = { "williamboman/mason.nvim",
+            opts = {}
+          }
+        }
+      }
+    }
+  }, {
+    _ = {
+      dep = true,
+      frags = { 10, 32 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        plugin = "blink.cmp",
+        time = 353000
+      },
+      top = false
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/friendly-snippets",
+    lazy = true,
+    name = "friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets.git",
+    <metatable> = {
+      __index = { "rafamadriz/friendly-snippets",
+        <metatable> = {
+          __index = { "rafamadriz/friendly-snippets" }
+        }
+      }
+    }
+  }, {
+    _ = {
+      cache = {
+        opts = {}
+      },
+      frags = { 45 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 10531208
+      },
+      top = true
+    },
+    dependencies = { "nvim-treesitter", "nvim-web-devicons" },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/render-markdown.nvim",
+    lazy = false,
+    name = "render-markdown.nvim",
+    url = "https://github.com/MeanderingProgrammer/render-markdown.nvim.git",
+    <metatable> = {
+      __index = { "MeanderingProgrammer/render-markdown.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+        opts = {}
+      }
+    }
+  }, {
+    _ = {
+      cache = {
+        event_list = { "BufReadPost", "BufNewFile" }
+      },
+      frags = { 42 },
+      handlers = {
+        event = {
+          BufNewFile = {
+            event = "BufNewFile",
+            id = "BufNewFile"
+          },
+          BufReadPost = {
+            event = "BufReadPost",
+            id = "BufReadPost"
+          }
+        }
+      },
+      installed = true,
+      top = true
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/nvim-ts-autotag",
+    lazy = true,
+    name = "nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag.git",
+    <metatable> = {
+      __index = { "windwp/nvim-ts-autotag",
+        event = { "BufReadPost", "BufNewFile" },
+        opts = {}
+      }
+    }
+  }, {
+    _ = {
+      cache = {
+        event_list = { "User FileOpened" }
+      },
+      frags = { 44 },
+      handlers = {
+        event = {
+          ["User FileOpened"] = {
+            event = "User",
+            id = "User FileOpened",
+            pattern = "FileOpened"
+          }
+        }
+      },
+      installed = true,
+      top = true
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/nvim-ts-rainbow2",
+    name = "nvim-ts-rainbow2",
+    url = "https://github.com/HiPhish/nvim-ts-rainbow2.git",
+    <metatable> = {
+      __index = { "HiPhish/nvim-ts-rainbow2",
+        event = { "User FileOpened" },
+        lazy = true
+      }
+    }
+  }, {
+    _ = {
+      frags = { 11 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 3738167
+      },
+      top = true
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/diffview.nvim",
+    lazy = false,
+    name = "diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim.git",
+    <metatable> = {
+      __index = { "sindrets/diffview.nvim" }
+    }
+  }, {
+    _ = {
+      cache = {
+        event_list = { "BufReadPost", "BufNewFile" }
+      },
+      frags = { 15, 39, 46 },
+      handlers = {
+        event = {
+          BufNewFile = {
+            event = "BufNewFile",
+            id = "BufNewFile"
+          },
+          BufReadPost = {
+            event = "BufReadPost",
+            id = "BufReadPost"
+          }
+        }
+      },
+      installed = true,
+      loaded = {
+        plugin = "render-markdown.nvim",
+        time = 6072583
+      },
+      top = false
+    },
+    dependencies = { "nvim-treesitter-textobjects", "nvim-treesitter-context" },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/nvim-treesitter",
+    lazy = true,
+    name = "nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter.git",
+    <metatable> = {
+      __index = { "nvim-treesitter/nvim-treesitter",
+        <metatable> = {
+          __index = { "nvim-treesitter/nvim-treesitter",
+            build = ":TSUpdate",
+            dependencies = { "nvim-treesitter/nvim-treesitter-textobjects", <15>{ "nvim-treesitter/nvim-treesitter-context",
+                config = <function 14>,
+                event = "BufReadPre"
+              } },
+            event = { "BufReadPost", "BufNewFile" },
+            <metatable> = {
+              __index = { "nvim-treesitter/nvim-treesitter" }
+            }
+          }
+        }
+      }
+    }
+  }, {
+    _ = {
+      cache = {
+        cmd_list = { "TmuxNavigateLeft", "TmuxNavigateDown", "TmuxNavigateUp", "TmuxNavigateRight", "TmuxNavigatePrevious", "TmuxNavigatorProcessList" },
+        keys_list = { <16>{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>",
+            mode = "n"
+          }, <17>{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>",
+            mode = "n"
+          }, <18>{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>",
+            mode = "n"
+          }, <19>{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>",
+            mode = "n"
+          }, <20>{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>",
+            mode = "n"
+          } }
+      },
+      frags = { 51 },
+      handlers = {
+        cmd = {
+          TmuxNavigateDown = "TmuxNavigateDown",
+          TmuxNavigateLeft = "TmuxNavigateLeft",
+          TmuxNavigatePrevious = "TmuxNavigatePrevious",
+          TmuxNavigateRight = "TmuxNavigateRight",
+          TmuxNavigateUp = "TmuxNavigateUp",
+          TmuxNavigatorProcessList = "TmuxNavigatorProcessList"
+        },
+        keys = {
+          ["\b"] = {
+            id = "\b",
+            lhs = "<c-h>",
+            mode = "n",
+            rhs = "<cmd><C-U>TmuxNavigateLeft<cr>"
+          },
+          ["\n"] = {
+            id = "\n",
+            lhs = "<c-j>",
+            mode = "n",
+            rhs = "<cmd><C-U>TmuxNavigateDown<cr>"
+          },
+          ["\v"] = {
+            id = "\v",
+            lhs = "<c-k>",
+            mode = "n",
+            rhs = "<cmd><C-U>TmuxNavigateUp<cr>"
+          },
+          ["\f"] = {
+            id = "\f",
+            lhs = "<c-l>",
+            mode = "n",
+            rhs = "<cmd><C-U>TmuxNavigateRight<cr>"
+          },
+          ["\28"] = {
+            id = "\28",
+            lhs = "<c-\\>",
+            mode = "n",
+            rhs = "<cmd><C-U>TmuxNavigatePrevious<cr>"
+          }
+        }
+      },
+      installed = true,
+      top = true
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/vim-tmux-navigator",
+    lazy = true,
+    name = "vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator.git",
+    <metatable> = {
+      __index = { "christoomey/vim-tmux-navigator",
+        cmd = { "TmuxNavigateLeft", "TmuxNavigateDown", "TmuxNavigateUp", "TmuxNavigateRight", "TmuxNavigatePrevious", "TmuxNavigatorProcessList" },
+        keys = { <table 16>, <table 17>, <table 18>, <table 19>, <table 20> }
+      }
+    }
+  }, {
+    _ = {
+      frags = { 36 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 22500
+      },
+      top = true
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/catppuccin",
+    lazy = false,
+    name = "catppuccin",
+    url = "https://github.com/catppuccin/nvim.git",
+    <metatable> = {
+      __index = { "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000
+      }
+    }
+  }, {
+    _ = {
+      frags = { 22 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 22592333
+      },
+      top = true
+    },
+    dependencies = { "mason.nvim", "nvim-lspconfig" },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/mason-lspconfig.nvim",
+    lazy = false,
+    name = "mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim.git",
+    <metatable> = {
+      __index = { "williamboman/mason-lspconfig.nvim",
+        config = <function 15>,
+        dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" }
+      }
+    }
+  }, {
+    _ = {
+      frags = { 34 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 283959
+      },
+      top = true
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/nvim-colorizer.lua",
+    lazy = false,
+    name = "nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua.git",
+    <metatable> = {
+      __index = { "norcalli/nvim-colorizer.lua" }
+    }
+  }, {
+    _ = {
+      cache = {
+        opts = {
+          appearance = <21>{
+            nerd_font_variant = "mono"
+          },
+          completion = <22>{
+            documentation = {
+              auto_show = false
+            }
+          },
+          fuzzy = <23>{
+            implementation = "prefer_rust_with_warning"
+          },
+          keymap = <24>{
+            preset = "enter"
+          },
+          sources = <25>{
+            default = { "lsp", "path", "snippets", "buffer" }
+          }
+        }
+      },
+      frags = { 9 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 10134500
+      },
+      top = true
+    },
+    dependencies = { "friendly-snippets" },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/blink.cmp",
+    lazy = false,
+    name = "blink.cmp",
+    url = "https://github.com/saghen/blink.cmp.git",
+    <metatable> = {
+      __index = { "saghen/blink.cmp",
+        dependencies = { "rafamadriz/friendly-snippets" },
+        opts = {
+          appearance = <table 21>,
+          completion = <table 22>,
+          fuzzy = <table 23>,
+          keymap = <table 24>,
+          sources = <table 25>
+        },
+        opts_extend = { "sources.default" },
+        version = "1.*"
+      }
+    }
+  }, {
+    _ = {
+      cache = {
+        event_list = { "VimEnter" }
+      },
+      frags = { 17, 30 },
+      handlers = {
+        event = {
+          VimEnter = {
+            event = "VimEnter",
+            id = "VimEnter"
+          }
+        }
+      },
+      installed = true,
+      loaded = {
+        plugin = "nvim-cmp",
+        time = 392208
+      },
+      top = false
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/lspkind.nvim",
+    lazy = true,
+    name = "lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim.git",
+    <metatable> = {
+      __index = { "onsails/lspkind.nvim",
+        <metatable> = {
+          __index = { "onsails/lspkind.nvim",
+            event = { "VimEnter" }
+          }
+        }
+      }
+    }
+  }, {
+    _ = {
+      cache = {
+        event_list = { "VeryLazy" }
+      },
+      frags = { 26 },
+      handlers = {
+        event = {
+          VeryLazy = <table 8>
+        }
+      },
+      installed = true,
+      top = true
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/neoscroll.nvim",
+    lazy = true,
+    name = "neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim.git",
+    <metatable> = {
+      __index = { "karb94/neoscroll.nvim",
+        event = "VeryLazy",
+        opts = {
+          easing_function = "quadratic",
+          hide_cursor = true,
+          mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "zt", "zz", "zb" },
+          stop_eof = true
+        }
+      }
+    }
+  }, {
+    _ = {
+      dep = true,
+      frags = { 50 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        plugin = "telescope.nvim",
+        time = 347042
+      },
+      top = false
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/telescope-fzf-native.nvim",
+    lazy = true,
+    name = "telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim.git",
+    <metatable> = {
+      __index = <table 14>
+    }
+  }, {
+    _ = {
+      cache = {
+        event_list = { "BufReadPre", "User FileOpened" }
+      },
+      frags = { 41, 43 },
+      handlers = {
+        event = {
+          BufReadPre = {
+            event = "BufReadPre",
+            id = "BufReadPre"
+          },
+          ["User FileOpened"] = {
+            event = "User",
+            id = "User FileOpened",
+            pattern = "FileOpened"
+          }
+        }
+      },
+      installed = true,
+      loaded = {
+        plugin = "nvim-treesitter",
+        time = 4315125
+      },
+      top = false
+    },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/nvim-treesitter-context",
+    name = "nvim-treesitter-context",
+    url = "https://github.com/romgrk/nvim-treesitter-context.git",
+    <metatable> = {
+      __index = { "romgrk/nvim-treesitter-context",
+        config = <function 16>,
+        event = { "User FileOpened" },
+        lazy = true,
+        <metatable> = {
+          __index = <table 15>
+        }
+      }
+    }
+  }, {
+    _ = {
+      cache = {
+        opts = {
+          animation = false
+        }
+      },
+      frags = { 6 },
+      handlers = {},
+      installed = true,
+      loaded = {
+        start = "start",
+        time = 4130917
+      },
+      top = true
+    },
+    dependencies = { "gitsigns.nvim", "nvim-web-devicons" },
+    dir = "/Users/bytedance/.local/share/nvim/lazy/barbar.nvim",
+    lazy = false,
+    name = "barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim.git",
+    <metatable> = {
+      __index = { "romgrk/barbar.nvim",
+        dependencies = { "lewis6991/gitsigns.nvim", "nvim-tree/nvim-web-devicons" },
+        init = <function 17>,
+        opts = {
+          animation = false
+        },
+        version = "^1.0.0"
+      }
+    }
+  } }

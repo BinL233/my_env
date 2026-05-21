@@ -19,6 +19,5 @@ require("lazy").setup({
 })
 
 require('config/keymaps')
-require('config/lsp')
 require('config/treesitter-config')
 require('config/colortheme')

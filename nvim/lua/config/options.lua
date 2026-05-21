@@ -30,3 +30,10 @@ vim.opt.smartcase = true -- but make it case sensitive if an uppercase is entere
 
 -- views can only be fully collapsed with the global statusline
 vim.opt.laststatus = 3
+
+-- Filetype detection
+vim.filetype.add({
+    extension = {
+        gotmpl = 'gotmpl',
+    },
+})
