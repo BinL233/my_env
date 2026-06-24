@@ -68,3 +68,7 @@ vim.keymap.set('n', 'gv', function()
   vim.cmd('vsplit')
   vim.lsp.buf.definition()
 end, { desc = 'Go to Definition in Split' })
+
+-- Outline
+vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+
