@@ -59,7 +59,7 @@ theme = Catppuccin Macchiato
 # background-opacity = 0.95
 # background-blur = true
 
-font-family = "Monaspace Neon NF Regular"
+font-family = "JetBrains Mono NL Regular"
 #
 # adjust-cell-width = -10%
 # font-thicken = false
