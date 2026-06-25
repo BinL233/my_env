@@ -72,3 +72,26 @@ end, { desc = 'Go to Definition in Split' })
 -- Outline
 vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
 
+-- LSP Display diagnostics
+vim.api.nvim_create_autocmd("CursorHold", {
+  buffer = bufnr,
+  callback = function()
+    local opts = {
+      focusable = false,
+      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+      border = 'rounded',
+      source = 'always',
+      prefix = ' ',
+      scope = 'cursor',
+    }
+    vim.diagnostic.open_float(nil, opts)
+  end
+})
+
+-- Lspsaga
+vim.keymap.set('n', '<leader>lc', "<cmd>Lspsaga code_action<CR>", { desc = "Lspsaga code_action" })
+vim.keymap.set('n', '<leader>li', "<cmd>Lspsaga incoming_calls<CR>", { desc = "Lspsaga incoming_calls" })
+vim.keymap.set('n', '<leader>lo', "<cmd>Lspsaga outgoing_calls<CR>", { desc = "Lspsaga outgoing_calls" })
+vim.keymap.set('n', '<leader>ld', "<cmd>Lspsaga peek_definition<CR>", { desc = "Lspsaga peek_definition" })
+vim.keymap.set('n', '<leader>lt', "<cmd>Lspsaga term_toggle<CR>", { desc = "Lspsaga term_toggle" })
+
