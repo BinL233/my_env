@@ -18,6 +18,8 @@ require("lazy").setup({
     }
 })
 
+vim.opt.updatetime = 500
+
 require('config/keymaps')
 require('config/treesitter-config')
 require('config/colortheme')
