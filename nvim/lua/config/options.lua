@@ -5,7 +5,7 @@ vim.g.maplocalleader = " "
 -- Hint: use `:h <option>` to figure out the meaning if needed
 vim.opt.clipboard = 'unnamedplus' -- use system clipboard
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
-vim.opt.mouse = 'a' -- allow the mouse to be used in Nvim
+-- vim.opt.mouse = 'a' -- allow the mouse to be used in Nvim
 
 -- Tab
 vim.opt.tabstop = 4 -- number of visual spaces per TAB
@@ -36,4 +36,20 @@ vim.filetype.add({
     extension = {
         gotmpl = 'gotmpl',
     },
+})
+
+-- LSP auto formatting
+-- Create an augroup to manage the autocmd cleanly
+local lsp_fmt_group = vim.api.nvim_create_augroup('LspFormattingGroup', {})
+
+-- Create the format-on-save autocmd
+vim.api.nvim_create_autocmd('BufWritePre', {
+  group = lsp_fmt_group,
+  callback = function(ev)
+    -- Using async = false ensures the formatting finishes before the file saves
+    vim.lsp.buf.format({
+        bufnr = ev.buf,
+        async = false
+    })
+  end,
 })
