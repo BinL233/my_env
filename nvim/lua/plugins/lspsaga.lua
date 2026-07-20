@@ -5,8 +5,15 @@ return {
             lightbulb = {
                 enable = true,
                 enable_in_insert = false,
-                sign = false,          -- Turn off the left gutter sign
-                virtual_text = true,   -- Show the lightbulb at the end of the line
+                sign = false,        -- Turn off the left gutter sign
+                virtual_text = true, -- Show the lightbulb at the end of the line
+            },
+            callhierarchy = {
+                keys = {
+                    edit = '<CR>', -- <CR> means Enter. You can also change this to 'o'
+                    toggle_or_open = 'o',
+                    quit = 'q',
+                }
             },
         })
     end,
