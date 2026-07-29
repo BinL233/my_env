@@ -1,86 +1,127 @@
 return {
-  'nvim-lualine/lualine.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
-  config = function()
-    local utils = require("lualine.utils.utils")
-    local highlight = require("lualine.highlight")
+    'nvim-lualine/lualine.nvim',
+    -- dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+        local icons = require('icons')
+        local diagnostics_icons = icons.get('diagnostics', true)
+        local git_icons = icons.get('git', true)
 
-    local diagnostics_message = require("lualine.component"):extend()
+        -- Bubbles config for lualine
+        -- Author: lokesh-krishna
+        -- MIT license, see LICENSE for more details.
 
-    diagnostics_message.default = {
-      colors = {
-        error = utils.extract_color_from_hllist(
-          { "fg", "sp" },
-          { "DiagnosticError", "LspDiagnosticsDefaultError", "DiffDelete" },
-          "#e32636"
-        ),
-        warning = utils.extract_color_from_hllist(
-          { "fg", "sp" },
-          { "DiagnosticWarn", "LspDiagnosticsDefaultWarning", "DiffText" },
-          "#ffa500"
-        ),
-        info = utils.extract_color_from_hllist(
-          { "fg", "sp" },
-          { "DiagnosticInfo", "LspDiagnosticsDefaultInformation", "DiffChange" },
-          "#ffffff"
-        ),
-        hint = utils.extract_color_from_hllist(
-          { "fg", "sp" },
-          { "DiagnosticHint", "LspDiagnosticsDefaultHint", "DiffAdd" },
-          "#273faf"
-        ),
-      },
-    }
+        -- stylua: ignore
+        local colors = {
+            blue   = '#80a0ff',
+            cyan   = '#79dac8',
+            black  = '#080808',
+            white  = '#c6c6c6',
+            red    = '#ff5189',
+            violet = '#d183e8',
+            grey   = '#303030',
+        }
 
-    function diagnostics_message:init(options)
-      diagnostics_message.super:init(options)
-      self.options.colors = vim.tbl_extend("force", diagnostics_message.default.colors, self.options.colors or {})
-      self.highlights = { error = "", warn = "", info = "", hint = "" }
-      self.highlights.error = highlight.create_component_highlight_group(
-        { fg = self.options.colors.error }, "diagnostics_message_error", self.options)
-      self.highlights.warn = highlight.create_component_highlight_group(
-        { fg = self.options.colors.warn }, "diagnostics_message_warn", self.options)
-      self.highlights.info = highlight.create_component_highlight_group(
-        { fg = self.options.colors.info }, "diagnostics_message_info", self.options)
-      self.highlights.hint = highlight.create_component_highlight_group(
-        { fg = self.options.colors.hint }, "diagnostics_message_hint", self.options)
-    end
+        local conditions = {
+            buffer_not_empty = function()
+                return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
+            end,
+            hide_in_width = function()
+                return vim.fn.winwidth(0) > 80
+            end,
+            check_git_workspace = function()
+                local filepath = vim.fn.expand('%:p:h')
+                local gitdir = vim.fn.finddir('.git', filepath .. ';')
+                return gitdir and #gitdir > 0 and #gitdir < #filepath
+            end,
+        }
 
-    function diagnostics_message:update_status()
-      local r, _ = unpack(vim.api.nvim_win_get_cursor(0))
-      local diagnostics = vim.diagnostic.get(0, { lnum = r - 1 })
-      if #diagnostics > 0 then
-        local diag = diagnostics[1]
-        for _, d in ipairs(diagnostics) do
-          if d.severity < diag.severity then
-            diag = d
-          end
-        end
-        local icons = { " ", " ", " ", " " }
-        local hl = { self.highlights.error, self.highlights.warn, self.highlights.info, self.highlights.hint }
-        return highlight.component_format_highlight(hl[diag.severity]) .. icons[diag.severity] .. " " .. diag.message
-      else
-        return ""
-      end
-    end
-
-    require('lualine').setup({
-      options = {
-        theme = 'dracula',
-      },
-      sections = {
-        lualine_c = {
-          {
-            diagnostics_message,
-            colors = {
-              error = "#BF616A",
-              warn  = "#EBCB8B",
-              info  = "#A3BE8C",
-              hint  = "#88C0D0",
+        local bubbles_theme = {
+            normal = {
+                a = { fg = colors.black, bg = colors.violet },
+                b = { fg = colors.white, bg = colors.grey },
+                c = { fg = colors.white },
             },
-          },
-        },
-      },
-    })
-  end
+
+            insert = { a = { fg = colors.black, bg = colors.blue } },
+            visual = { a = { fg = colors.black, bg = colors.cyan } },
+            replace = { a = { fg = colors.black, bg = colors.red } },
+
+            inactive = {
+                a = { fg = colors.white, bg = colors.black },
+                b = { fg = colors.white, bg = colors.black },
+                c = { fg = colors.white },
+            },
+        }
+
+        local config = {
+            options = {
+                theme = bubbles_theme,
+                component_separators = '',
+                section_separators = { left = '', right = '' },
+            },
+            sections = {
+                lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
+                lualine_b = { 'filename', 'branch' },
+                lualine_c = {
+                    '%=', --[[ add your center components here in place of this comment ]]
+                },
+                lualine_x = {},
+                lualine_y = { 'filetype', 'progress' },
+                lualine_z = {
+                    { 'location', separator = { right = '' }, left_padding = 2 },
+                },
+            },
+            inactive_sections = {
+                lualine_a = { 'filename' },
+                lualine_b = {},
+                lualine_c = {},
+                lualine_x = {},
+                lualine_y = {},
+                lualine_z = { 'location' },
+            },
+            tabline = {},
+            extensions = {},
+        }
+
+        -- Inserts a component in lualine_c at left section
+        local function ins_left(component)
+            table.insert(config.sections.lualine_c, 1, component)
+        end
+
+        -- Inserts a component in lualine_x at right section
+        local function ins_right(component)
+            table.insert(config.sections.lualine_x, component)
+        end
+
+        ins_left {
+            'diagnostics',
+            sources = { 'nvim_diagnostic' },
+            symbols = {
+                error = diagnostics_icons.Error,
+                warn = diagnostics_icons.Warning,
+                info = diagnostics_icons.Information,
+            },
+            diagnostics_color = {
+                color_error = { fg = colors.red },
+                color_warn = { fg = colors.yellow },
+                color_info = { fg = colors.cyan },
+            },
+        }
+
+        ins_right {
+            'diff',
+            symbols = {
+                added = git_icons.Add,
+                modified = git_icons.Mod_alt,
+                removed = git_icons.Remove,
+            },
+            diff_color = {
+                added = { fg = colors.green },
+                modified = { fg = colors.orange },
+                removed = { fg = colors.red },
+            },
+            cond = conditions.hide_in_width,
+        }
+        require('lualine').setup(config)
+    end
 }

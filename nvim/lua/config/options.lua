@@ -38,6 +38,20 @@ vim.filetype.add({
     },
 })
 
+-- Diagnostic sign icons
+local diagnostics_icons = require('icons').get('diagnostics')
+
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = diagnostics_icons.Error,
+            [vim.diagnostic.severity.WARN] = diagnostics_icons.Warning,
+            [vim.diagnostic.severity.INFO] = diagnostics_icons.Information,
+            [vim.diagnostic.severity.HINT] = diagnostics_icons.Hint,
+        },
+    },
+})
+
 -- LSP auto formatting
 -- Create an augroup to manage the autocmd cleanly
 local lsp_fmt_group = vim.api.nvim_create_augroup('LspFormattingGroup', {})
