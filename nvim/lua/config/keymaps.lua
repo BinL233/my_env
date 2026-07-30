@@ -1,7 +1,7 @@
 -- define common options
 local opts = {
-    noremap = true,      -- non-recursive
-    silent = true,       -- do not show message
+    noremap = true, -- non-recursive
+    silent = true,  -- do not show message
 }
 
 -----------------
@@ -27,14 +27,14 @@ vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>", { silent = true })
 
 -- Diffview
 vim.keymap.set("n", "<leader>d", function()
-  local lib = require("diffview.lib")
-  local view = lib.get_current_view()
-  
-  if view then
-    vim.cmd("DiffviewClose")
-  else
-    vim.cmd("DiffviewOpen")
-  end
+    local lib = require("diffview.lib")
+    local view = lib.get_current_view()
+
+    if view then
+        vim.cmd("DiffviewClose")
+    else
+        vim.cmd("DiffviewOpen")
+    end
 end, { desc = "Toggle Diffview" })
 
 -----------------
@@ -65,8 +65,8 @@ vim.keymap.set('n', 'gb', '<C-t>', { desc = 'Go Back from Definition' })
 
 -- Open definition in a vertical split (handy!)
 vim.keymap.set('n', 'gv', function()
-  vim.cmd('vsplit')
-  vim.lsp.buf.definition()
+    vim.cmd('vsplit')
+    vim.lsp.buf.definition()
 end, { desc = 'Go to Definition in Split' })
 
 -- Outline
@@ -74,18 +74,18 @@ vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" }
 
 -- LSP Display diagnostics
 vim.api.nvim_create_autocmd("CursorHold", {
-  buffer = bufnr,
-  callback = function()
-    local opts = {
-      focusable = false,
-      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-      border = 'rounded',
-      source = 'always',
-      prefix = ' ',
-      scope = 'cursor',
-    }
-    vim.diagnostic.open_float(nil, opts)
-  end
+    buffer = bufnr,
+    callback = function()
+        local opts = {
+            focusable = false,
+            close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+            border = 'rounded',
+            source = 'always',
+            prefix = ' ',
+            scope = 'cursor',
+        }
+        vim.diagnostic.open_float(nil, opts)
+    end
 })
 
 -- Lspsaga
@@ -95,3 +95,5 @@ vim.keymap.set('n', '<leader>lo', "<cmd>Lspsaga outgoing_calls<CR>", { desc = "L
 vim.keymap.set('n', '<leader>ld', "<cmd>Lspsaga peek_definition<CR>", { desc = "Lspsaga peek_definition" })
 vim.keymap.set('n', '<leader>lt', "<cmd>Lspsaga term_toggle<CR>", { desc = "Lspsaga term_toggle" })
 
+-- Neogit
+vim.keymap.set('n', "<leader>dd", "<cmd>Neogit<cr>", { desc = "Show Neogit UI" })
