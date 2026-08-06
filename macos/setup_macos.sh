@@ -25,3 +25,8 @@ wget https://pilotmoon.com/downloads/ScrollReverser-1.9.zip
 # yazi
 brew install yazi ffmpeg-full sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick-full font-symbols-only-nerd-font
 brew link ffmpeg-full imagemagick-full -f --overwrite
+
+# k8s
+brew install kubectl
+brew install kubectx
+brew install kubecolor
