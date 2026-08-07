@@ -1,10 +1,13 @@
 return {
-  "hedyhli/outline.nvim",
-  config = function()
-    -- Example mapping to toggle outline
+    "hedyhli/outline.nvim",
+    config = function()
+        -- Example mapping to toggle outline
 
-    require("outline").setup {
-      -- Your setup opts here (leave empty to use defaults)
-    }
-  end,
+        require("outline").setup {
+            outline_window = {
+                width = 15,
+                relative_width = true,
+            },
+        }
+    end,
 }
