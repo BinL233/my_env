@@ -14,4 +14,4 @@ source <(kubecolor completion zsh)
 export EDITOR="nvim"
 
 # git
-git config --global alias.am '!f() { git add . && git commit -m "$1"; }; f'
+git config --global alias.ac '!f() { git add . && git commit -m "$1"; }; f'
