@@ -30,6 +30,11 @@ return {
 
       ['<C-j>'] = { 'select_next', 'fallback' },
       ['<C-k>'] = { 'select_prev', 'fallback' },
+
+      -- Tab only jumps inside an active snippet; otherwise it inserts a real
+      -- indent (expandtab -> 4 spaces). Never used to pick completion items.
+      ['<Tab>'] = { 'snippet_forward', 'fallback' },
+      ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
     },
 
     appearance = {

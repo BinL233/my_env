@@ -56,8 +56,8 @@ keybind = super+down=goto_split:bottom
 
 theme = Catppuccin Macchiato
 
-# background-opacity = 0.95
-# background-blur = true
+background-opacity = 0.85
+background-blur = true
 
 font-family = "JetBrains Mono NL Regular"
 #
