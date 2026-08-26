@@ -1,6 +1,6 @@
 # Dot Files
 
-Personal dotfiles for my macOS development setup — Neovim, Zsh, Ghostty, and iTerm2.
+Personal dotfiles for my macOS development setup — Neovim, Zsh, Ghostty, iTerm2, and p10k.
 
 ![os](images/os.png)
 ![nvim](images/nvim.png)
@@ -9,7 +9,7 @@ Personal dotfiles for my macOS development setup — Neovim, Zsh, Ghostty, and i
 
 | Path | What it is | Where it goes |
 | --- | --- | --- |
-| `nvim/` | Neovim config (Lua, [lazy.nvim](https://github.com/folke/lazy.nvim)) | `~/.config/nvim` |
+| `nvim/` | Neovim config ([lazy.nvim](https://github.com/folke/lazy.nvim)) | `~/.config/nvim` |
 | `macos/zshrc` | Zsh config (oh-my-zsh + powerlevel10k) | `~/.zshrc` |
 | `macos/.p10k.zsh` | Powerlevel10k prompt theme | `~/.p10k.zsh` |
 | `macos/setup_macos.sh` | Homebrew bootstrap for a fresh Mac | run once |
