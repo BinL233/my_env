@@ -111,8 +111,8 @@ on-mode-changed = []
     # '''
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-    alt-slash = 'layout tiles horizontal vertical'
-    alt-comma = 'layout accordion horizontal vertical'
+    # alt-slash = 'layout tiles horizontal vertical'   # disabled: freed for terminal/nvim
+    # alt-comma = 'layout accordion horizontal vertical'   # disabled: conflicted with barbar <A-,> BufferPrevious
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
     alt-h = 'focus left'
