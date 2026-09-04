@@ -1,0 +1,128 @@
+diff --git a/src/main.rs b/src/main.rs
+index b0a7f06..7fcb337 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -84,6 +84,18 @@ fn app_font_map(path: &str) -> std::io::Result<HashMap<String, String>> {
+     Ok(result)
+ }
+ 
++fn space_color(space: &str) -> &'static str {
++    match space {
++        "1" | "7" => "0xffed8796",
++        "2" | "8" => "0xfff5a97f",
++        "3" | "9" => "0xffeed49f",
++        "4" => "0xffa6da95",
++        "5" => "0xff8aadf4",
++        "6" => "0xffc6a0f6",
++        _ => "0xffcad3f5",
++    }
++}
++
+ 
+ unsafe extern "C" {
+     fn sketchybar_call(message: *const c_char, message_length: usize) -> *const c_char;
+@@ -242,17 +254,13 @@ fn main() -> std::io::Result<()> {
+             let mut env_msgs: Vec<Vec<i8>> = Vec::new();
+             if let Ok(msg) = sketchybar_set(&format!("space.{val}"), json!(
+                     {
+-                        "background": {"color": "0x44ffffff"},
+-                        "label": {"color": "0xffffffff"},
+-                        "icon": {"color": "0xffffffff"},
++                        "background": {"border_color": "0xff939ab7"},
+                     })) {
+                 env_msgs.push(msg);
+             }
+             if let Ok(msg) = sketchybar_set(&format!("space.{prev_val}"), json!(
+                     {
+-                        "background": {"color": "0x00000000"},
+-                        "label": {"color": "0xffa0a0a0"},
+-                        "icon": {"color": "0xffa0a0a0"},
++                        "background": {"border_color": "0x60494d64"},
+                     })) {
+                 env_msgs.push(msg);
+             }
+@@ -266,8 +274,6 @@ fn main() -> std::io::Result<()> {
+ 
+     let mut stream = aerospace_connect()?;
+ 
+-    let mut displays: Vec<SketchybarDisplay> = sketchybar_query("displays").unwrap();
+-    displays.sort_by(|a, b| a.frame.x.total_cmp(&b.frame.x));
+     let bar_props: SketchybarBar = sketchybar_query("bar").unwrap();
+     let mut items_exist: HashMap<String, bool> = bar_props.items.iter().filter(|n| n.contains("space.")).map(|n| (n.clone(), false)).collect();
+ 
+@@ -282,50 +288,49 @@ fn main() -> std::io::Result<()> {
+         let space = workspace.workspace;
+         let space_name = format!("space.{space}");
+ 
+-        let mut cur_apps: Vec<String> = windows.iter().enumerate().filter(|(_, w)| {
+-            w.window_title != "" && w.workspace == space
+-        }).map(|(_, w)| {
++        let cur_apps: Vec<String> = windows.iter().filter(|w| {
++            w.workspace == space
++        }).map(|w| {
+             if let Some(n) = app_to_font.get(w.app_name.as_str()) {
+                 n.clone()
+             } else {
+                 String::from(":chevron_right:")
+             }
+         }).collect();
+-        cur_apps.sort();
+-        cur_apps.dedup();
+         let label = String::from(" ") + &cur_apps.join(" ");
+-
+-        let display_id = displays[(workspace.monitor_id - 1) as usize].arrangement_id;
+-
+-        let rpad = if label.len() < 2 { 0 } else { 10 };
+-        let bg_color= if workspace.focused { "0x44ffffff" } else { "0x00000000" };
+-        let color = if workspace.visible { "0xffffffff" } else { "0xffc0c0c0" };
++        let should_draw = workspace.focused || !cur_apps.is_empty();
++        let item_padding = if should_draw { 2 } else { 0 };
++        let border_color = if workspace.focused { "0xff939ab7" } else { "0x60494d64" };
+         let params = json!({
++            "drawing": should_draw,
++            "padding_left": item_padding,
++            "padding_right": item_padding,
+             "background": {
+-                "color": bg_color,
+-                "corner_radius": 5,
+-                "height": 20,
++                "drawing": should_draw,
++                "color": "0x603c3e4f",
++                "border_color": border_color,
++                "border_width": 2,
++                "corner_radius": 9,
++                "height": 26,
+             },
+             "label": {
+                 "string": label,
+-                "color": color,
+-                "padding_right": rpad,
+-                "padding_left": 6,
++                "color": "0xff939ab7",
++                "padding_right": 20,
++                "padding_left": 3,
+                 "y_offset": -1,
+-                "drawing": "on",
+-                "font": "sketchybar-app-font:Mono:12.0",
++                "drawing": should_draw,
++                "font": "sketchybar-app-font:Regular:16.0",
+             },
+             "icon": {
+                 "string": space,
+-                "font": {
+-                    "size": 12.0
+-                },
+-                "padding_left": 8,
+-                "padding_right": 0,
+-                "color": color,
++                "drawing": should_draw,
++                "font": "SF Pro:Bold:14.0",
++                "padding_left": 10,
++                "padding_right": 10,
++                "color": space_color(&space),
+             },
+             "click_script": format!("aerospace workspace {space}"),
+-            "display": display_id,
+         });
+ 
+         if let Some(e) = items_exist.get_mut(&space_name) {

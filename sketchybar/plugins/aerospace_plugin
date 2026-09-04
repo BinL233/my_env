@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec "$HOME/.local/share/sketchybar-aerospace-plugin/target/release/sbar-aerobar-plugin"
